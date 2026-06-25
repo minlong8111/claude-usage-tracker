@@ -1,0 +1,88 @@
+{
+  "name": "claude-budget-monitor",
+  "displayName": "Claude Budget Monitor",
+  "description": "Monitor Claude Code usage, costs, and budget alerts in VS Code",
+  "version": "0.1.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeBudget.openDashboard",
+        "title": "Claude Budget: Open Dashboard"
+      },
+      {
+        "command": "claudeBudget.setDailyBudget",
+        "title": "Claude Budget: Set Daily Budget"
+      },
+      {
+        "command": "claudeBudget.setWeeklyBudget",
+        "title": "Claude Budget: Set Weekly Budget"
+      },
+      {
+        "command": "claudeBudget.setMonthlyBudget",
+        "title": "Claude Budget: Set Monthly Budget"
+      }
+    ],
+    "configuration": {
+      "title": "Claude Budget Monitor",
+      "properties": {
+        "claudeBudget.refreshInterval": {
+          "type": "number",
+          "default": 60,
+          "minimum": 30,
+          "description": "Refresh interval in seconds"
+        },
+        "claudeBudget.dataDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Custom Claude data directory (empty = auto-detect)"
+        },
+        "claudeBudget.dailyBudget": {
+          "type": "number",
+          "default": 0,
+          "description": "Daily budget limit in USD (0 = disabled)"
+        },
+        "claudeBudget.weeklyBudget": {
+          "type": "number",
+          "default": 0,
+          "description": "Weekly budget limit in USD (0 = disabled)"
+        },
+        "claudeBudget.monthlyBudget": {
+          "type": "number",
+          "default": 0,
+          "description": "Monthly budget limit in USD (0 = disabled)"
+        },
+        "claudeBudget.alertThreshold": {
+          "type": "number",
+          "default": 80,
+          "minimum": 1,
+          "maximum": 100,
+          "description": "Alert at this % of budget"
+        },
+        "claudeBudget.timezone": {
+          "type": "string",
+          "default": "",
+          "description": "IANA timezone for date display"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
+    "watch": "npm run build -- --watch",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "@types/vscode": "^1.125.0",
+    "esbuild": "^0.28.1",
+    "typescript": "^6.0.3"
+  }
+}
