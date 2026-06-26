@@ -1,4 +1,4 @@
-# Claude Usage Tracker
+# Claude Token Vibe Check
 
 Track Claude Code usage, costs, and token consumption — all in VS Code.
 
@@ -9,7 +9,7 @@ Track Claude Code usage, costs, and token consumption — all in VS Code.
 
 ## What it does
 
-Claude Usage Tracker reads the JSONL log files that Claude Code generates locally (`~/.claude/projects/`) and presents them in a clean dashboard. It shows you:
+Claude Token Vibe Check reads the JSONL log files that Claude Code generates locally (`~/.claude/projects/`) and presents them in a clean dashboard. It shows you:
 
 - How much you're spending per day/month/project
 - Which models you're using and their costs
@@ -41,17 +41,17 @@ Shows today's cost directly in VS Code's status bar. Click to open the full dash
 ### From Marketplace
 1. Open VS Code
 2. Press `Cmd+Shift+X` (Mac) or `Ctrl+Shift+X` (Windows/Linux)
-3. Search for "Claude Usage Tracker"
+3. Search for "Claude Token Vibe Check"
 4. Click Install
 
-### From VSIX
+### From Command Line
 ```bash
-code --install-extension claude-usage-tracker-0.2.0.vsix
+code --install-extension longmap813.claude-token-vibe-check
 ```
 
 ## Configuration
 
-Open Settings (`Cmd+,`) and search for "Claude Usage Tracker", or edit `settings.json`:
+Open Settings (`Cmd+,`) and search for "Claude Token Vibe Check", or edit `settings.json`:
 
 ```json
 {
