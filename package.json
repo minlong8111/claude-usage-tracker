@@ -2,6 +2,7 @@
   "name": "claude-usage-tracker",
   "displayName": "Claude Usage Tracker",
   "description": "Monitor Claude Code usage, costs, and budget alerts in VS Code",
+  "icon": "images/icon.png",
   "version": "0.2.0",
   "publisher": "minlong8111",
   "license": "MIT",
